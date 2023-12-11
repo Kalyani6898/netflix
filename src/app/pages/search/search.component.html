@@ -1,0 +1,49 @@
+<div class="contain mt-5 p-5">
+  <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="mb-3 col-lg-10">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="movieName"
+          placeholder=" {{ labels.SEARCH_PLACEHOLDER }} "
+        />
+        <p class="pt-2 px-2 d-flex error-message" *ngIf="!isValidInput">
+          *Please enter Movie Name..!!
+        </p>
+      </div>
+
+      <div class="col-lg-2">
+        <button class="btn btn-md" (keyup.enter)="submitForm()">
+          {{ labels.SEARCH_BUTTON }}
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row mt-5" *ngIf="isMovieFound">
+    <div class="col-lg-4" *ngFor="let s of searchResult">
+      <div class="row">
+        <div class="col-lg-3 mt-4 mb-4" *ngIf="s.poster_path">
+          <img
+            src="{{ labels.IMG_URL }}/{{ s.poster_path }}"
+            [routerLink]="['/movie', s.id]"
+          />
+        </div>
+        <div class="col-lg-9 mt-4 mb-4">
+          <h5>{{ s.original_title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="p-5" *ngIf="!isMovieFound">
+  <div class="alert alert-danger d-flex flex-column" role="alert">
+    <h4 class="alert-heading">Oops...!!!</h4>
+    <p>
+      You have entered wrong movie name or we are unable to find the entered
+      movie.<br />
+      Please enter correct Movie Name.
+    </p>
+  </div>
+</div>

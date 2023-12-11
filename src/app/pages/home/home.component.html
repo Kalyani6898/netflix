@@ -1,0 +1,167 @@
+<!-- banner start  -->
+<div class="contain-fluid">
+  <div
+    id="carouselExampleDark"
+    class="carousel carousel-dark slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        *ngFor="let b of bannerResult; let i = index"
+        [ngClass]="{ active: i === 0 }"
+      >
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ b.backdrop_path }}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>{{ b.original_title }}</h2>
+          <p>{{ b.overview }}</p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{{ labels.PREVIOUS }}</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{{ labels.NEXT }}</span>
+    </button>
+  </div>
+</div>
+<!-- banner end  -->
+
+<div class="contain mt-3 mb-5 p-4">
+  <!-- trending movies  -->
+  <div class="row">
+    <h5 class="text-white">{{ labels.TRENDING_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let t of trendingMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ t.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', t.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- action movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.ACTION_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let a of actionMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ a.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- adventure movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.ADVENTURE_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let a of adventureMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ a.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- animation movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.ANIMATION_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let a of animationMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ a.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', a.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- comedy movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.COMEDY_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let c of comedyMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ c.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', c.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- documentary movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.DOCUMENTARY_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let d of documentaryMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ d.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', d.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- science-fiction movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.SCI_FIC_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let sf of sciencefictionMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ sf.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', sf.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- thriller movies  -->
+  <div class="row mt-4">
+    <h5 class="text-white">{{ labels.THRILLER_MOVIES }}</h5>
+    <div class="rowposter mt-3 p-2">
+      <ng-container *ngFor="let th of thrillerMovieResult">
+        <img
+          src="{{ labels.IMAGE_URL }}/{{ th.poster_path }}"
+          class="rowimg largeposter"
+          alt="..."
+          [routerLink]="['/movie', th.id]"
+        />
+      </ng-container>
+    </div>
+  </div>
+</div>

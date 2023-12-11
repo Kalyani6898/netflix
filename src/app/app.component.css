@@ -1,0 +1,8 @@
+.navbar .navbar-brand {
+  color: var(--red-color);
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: var(--red-color);
+}

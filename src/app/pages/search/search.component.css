@@ -1,0 +1,22 @@
+button {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+button:hover {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+img {
+  width: 100%;
+  cursor: pointer;
+}
+
+h5 {
+  color: var(--white-color);
+}
+
+.error-message {
+  color: var(--red-color);
+}

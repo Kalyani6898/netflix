@@ -1,0 +1,25 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: var(--white-color);
+  font-weight: bold;
+}
+
+p {
+  color: var(--white-color);
+}
+
+a {
+  background-color: var(--red-color);
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--red-color);
+  color: var(--white-color);
+  border: 2px solid var(--white-color);
+}
